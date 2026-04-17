@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NYN06Z1XJC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NYN06Z1XJC');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FAQ - AstroDev</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .faq-page-header {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: rgba(0, 18, 41, 0.6);
+      border-radius: 20px;
+      margin: 3rem auto;
+      max-width: 900px;
+    }
+    .faq-page-header h1 {
+      color: #80bfff;
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+    .faq-page-header p {
+      color: #a3bee9;
+      font-size: 1.1rem;
+      font-style: italic;
+    }
+    .faq-section {
+      max-width: 950px;
+      margin: 0 auto 6rem auto;
+      padding: 0 2rem;
+    }
+    .faq-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .faq-item {
+      border: 2px solid #3399ff;
+      border-radius: 16px;
+      background: rgba(13, 30, 53, 0.85);
+      overflow: hidden;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+    .faq-item:hover {
+      border-color: #67b7f7;
+      box-shadow: 0 8px 30px rgba(51, 153, 255, 0.25);
+    }
+    .faq-item.active {
+      border-color: #67b7f7;
+      background: rgba(0, 43, 92, 0.9);
+      box-shadow: 0 0 40px rgba(51, 153, 255, 0.4);
+    }
+    .faq-question {
+      cursor: pointer;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+      transition: background 0.3s ease;
+    }
+    .faq-item.active .faq-question {
+      background: rgba(51, 153, 255, 0.08);
+    }
+    .faq-question h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #b3d1ff;
+      margin: 0;
+      user-select: text;
+    }
+    .faq-toggle {
+      font-size: 2rem;
+      color: #80bfff;
+      font-weight: 900;
+      line-height: 1;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+    .faq-item.active .faq-toggle {
+      color: #67b7f7;
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      padding: 0 2rem;
+      overflow: hidden;
+      color: #c1d4ff;
+      font-size: 1rem;
+      line-height: 1.7;
+      background: rgba(0, 23, 57, 0.9);
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      user-select: text;
+    }
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 1.5rem 2rem;
+    }
+    .faq-answer p {
+      margin: 0;
+    }
+    .faq-answer a {
+      color: #67b7f7;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    .faq-answer a:hover {
+      color: #3399ff;
+      text-decoration: underline;
+    }
+    @media(max-width: 768px) {
+      .faq-page-header h1 {
+        font-size: 2.2rem;
+      }
+      .faq-question {
+        padding: 1.2rem 1.5rem;
+      }
+      .faq-question h3 {
+        font-size: 1rem;
+      }
+      .faq-answer {
+        padding: 0 1.5rem;
+      }
+      .faq-item.active .faq-answer {
+        padding: 1rem 1.5rem;
+      }
+    }
+    .kb-button {
+  display: inline-block;
+  background-color: #007acc;
+  color: white;
+  padding: 12px 28px;
+  font-size: 1.08rem;
+  font-weight: 700;
+  border-radius: 7px;
+  box-shadow: 0 4px 12px rgba(0,122,204,0.20);
+  margin-top: 1rem;
+  transition: background 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+}
+.kb-button:hover {
+  background-color: #005fa3;
+  box-shadow: 0 8px 22px rgba(0,122,204,0.32);
+}
+  </style>
+</head>
+<body class="loading">
+  <div class="cursor"></div>
+  <canvas id="stars"></canvas>
+
+  <div id="loading-screen">
+    <div class="loader-container">
+      <div class="loader">
+        <div class="orbit"><div class="planet"></div></div>
+        <div class="orbit orbit-2"><div class="planet planet-2"></div></div>
+        <div class="orbit orbit-3"><div class="planet planet-3"></div></div>
+      </div>
+      <h2 class="loading-text">AstroDev</h2>
+      <div class="loading-bar"><div class="loading-progress"></div></div>
+      <p class="loading-subtitle">Loading your digital universe...</p>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-section">
+        <div class="logo-icon">🚀</div>
+        <a href="index.html" class="logo">AstroDev</a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="experience.html" class="nav-link">Experience</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="plans.html" class="nav-link">Plans</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="faq.html" class="nav-link active">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="get-started-btn">Get Started</a>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+<div class="container">
+  <div class="faq-page-header fade-in">
+    <h1>Frequently Asked Questions</h1>
+    <p>Find answers to all your questions about our services, pricing, and support</p>
+  </div>
+
+  <!-- Knowledge Base Button -->
+  <div style="text-align:center; margin-bottom: 2rem;">
+    <a href="https://astro-dev.xyz/knowlagebase" class="kb-button" target="_blank" rel="noopener noreferrer">
+      Visit Full Knowledge Base
+    </a>
+  </div>
+</div>
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-grid">
+
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>How long does a Minecraft server setup take?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>A basic single server setup typically takes 3-5 business days. A full network setup with multiple servers and automated billing takes 1 to 2 months. Timeline depends on complexity and customization requirements.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>What payment methods do you accept?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>We only accept bank transfers via iPay.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>What's your revision policy?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>All projects include 1 free revision. Additional revisions are allowed for up to 3 days after delivery. After this period, each additional revision costs $8.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>Do you provide support after project completion?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! All projects include ongoing support and maintenance. For servers, we offer 24/7 monitoring and quick-response technical support. Maintenance plans start at $20/month.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>Do you offer custom plugins for servers?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>No, we currently do not offer custom plugin development.</p>
+          </div>
+        </div>
+
+        <div class="faq-item fade-in">
+          <div class="faq-question">
+            <h3>How can I contact you for more questions?</h3>
+            <span class="faq-toggle">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>Please contact us via email at <a href="mailto:ceo@astroinc.xyz">ceo@astroinc.xyz</a> or join our <a href="https://discord.gg/3GxFJq8B5n" target="_blank">Discord community</a>. We're happy to help!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+<footer>
+  <div class="container" style="text-align:center;">
+    <h3>Get In Touch</h3>
+    <p>Email: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;">ceo@astroinc.xyz</a></p>
+    <p>Discord: <a href="https://discord.gg/3GxFJq8B5n" target="_blank">Join Community</a></p>
+
+    <p>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a> |
+      <a href="faq.html">FAQ</a> |
+      <a href="license.html">License</a>
+    </p>
+
+    <p>&copy; 2025 AstroDev. All rights reserved.</p>
+  </div>
+
+  <a class="copyrighted-badge" 
+     title="Copyrighted.com Registered &amp; Protected" 
+     target="_blank" 
+     href="https://app.copyrighted.com/website/pXbuC8B3PhUJclYR/">
+    <img 
+      alt="Copyrighted.com Registered &amp; Protected" 
+      border="0" 
+      width="125" 
+      height="75" 
+      srcset="https://static.copyrighted.com/badges/125x75/03_2x.png 2x" 
+      src="https://static.copyrighted.com/badges/125x75/03.png">
+  </a>
+  <script src="https://static.copyrighted.com/badges/helper.js"></script>
+</footer>
+
+     
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener('load', () => {
+      const loadingScreen = document.getElementById('loading-screen');
+      setTimeout(() => {
+        if (loadingScreen) {
+          loadingScreen.classList.add('hidden');
+          document.body.classList.remove('loading');
+          setTimeout(() => loadingScreen.remove(), 500);
+        }
+      }, 1500);
+    });
+  </script>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69037f95307d07194e7dc7f5/1j8qqkp7a';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NYN06Z1XJC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-NYN06Z1XJC');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plans & Pricing - AstroDev</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- EXTRA INLINE CSS (SAFE + ISOLATED) -->
+<style>
+/* Fade-in animation */
+.astro-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.6s ease;
+}
+.astro-animate.visible {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+/* Notice box styling */
+.pricing-disclaimer {
+  background: rgba(255,255,255,0.07);
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 20px;
+  font-size: 15px;
+  color: #dce7ff;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* Add-ons section */
+.addons-section {
+  margin-top: 70px;
+  text-align: center;
+}
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+.addon-card {
+  padding: 20px;
+  border-radius: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(8px);
+  transition: 0.3s ease;
+}
+.addon-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(66,105,255,0.25);
+  border-color: rgba(66,105,255,0.4);
+}
+.addon-price {
+  margin-top: 6px;
+  font-weight: 700;
+  font-size: 18px;
+  color: #80a7ff;
+}
+
+/* Comparison Table */
+.comparison-table {
+  margin-top: 60px;
+  border-collapse: collapse;
+  width: 100%;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.comparison-table th, .comparison-table td {
+  padding: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+.comparison-table th {
+  background: rgba(66,105,255,0.15);
+  font-size: 16px;
+}
+.comparison-table tr:hover td {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Mobile collapse for comparison */
+@media(max-width: 700px){
+  .comparison-table thead { display:none; }
+  .comparison-table tr { display:block; margin-bottom:20px; }
+  .comparison-table td {
+    display:flex;
+    justify-content:space-between;
+    padding:12px 10px;
+  }
+  .comparison-table td::before {
+    content: attr(data-label);
+    font-weight:700;
+    color:#fff;
+  }
+}
+</style>
+</head>
+
+<body class="loading">
+<div class="cursor"></div>
+
+<!-- Loading Screen -->
+<div id="loading-screen">
+  <div class="loader-container">
+    <div class="loader">
+      <div class="orbit"><div class="planet"></div></div>
+      <div class="orbit orbit-2"><div class="planet planet-2"></div></div>
+      <div class="orbit orbit-3"><div class="planet planet-3"></div></div>
+    </div>
+    <h2 class="loading-text">AstroDev</h2>
+    <div class="loading-bar"><div class="loading-progress"></div></div>
+    <p class="loading-subtitle">Loading your digital universe...</p>
+  </div>
+</div>
+
+<canvas id="stars"></canvas>
+
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-section">
+      <div class="logo-icon">🚀</div>
+      <a href="index.html" class="logo">AstroDev</a>
+    </div>
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="experience.html" class="nav-link">Experience</a></li>
+      <li><a href="projects.html" class="nav-link">Projects</a></li>
+      <li><a href="plans.html" class="nav-link active">Plans</a></li>
+      <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+      <li><a href="faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    <a href="plans.html" class="get-started-btn">Get Started</a>
+    <div class="hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-header">
+  <div class="container astro-animate">
+    <h1>Plans & Pricing</h1>
+    <p>Professional server development and management services</p>
+
+    <!-- Notice -->
+    <div class="pricing-disclaimer">
+      <p><strong>⚠ Taxes & External Fees:</strong> Prices do <strong>not</strong> include taxes or 3rd-party hosting costs (VPS, domains, licenses, WHMCS, nodes, wings). These will be calculated during consultation.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing-section">
+<div class="container">
+
+<!-- Pricing Grid -->
+<div class="pricing-grid">
+
+<div class="pricing-card astro-animate">
+  <div class="pricing-header">
+    <h3>Management & Maintenance</h3>
+    <div class="price">$20+</div>
+    <p>Per month</p>
+  </div>
+  <ul class="pricing-features">
+    <li>✓ 24/7 monitoring</li>
+    <li>✓ Backups</li>
+    <li>✓ Plugin updates</li>
+    <li>✓ Performance optimization</li>
+    <li>✓ Security improvements</li>
+    <li>✓ Community management</li>
+    <li>✓ Growth strategies</li>
+  </ul>
+  <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;" class="plan-button">Contact</a>
+</div>
+
+<div class="pricing-card astro-animate">
+  <div class="pricing-header">
+    <h3>Discord Server Setup</h3>
+    <div class="price">$50</div>
+    <p>One-time</p>
+  </div>
+  <ul class="pricing-features">
+    <li>✓ Full setup</li>
+    <li>✓ Custom bot commands</li>
+    <li>✓ Roles + permissions</li>
+    <li>✓ Security settings</li>
+    <li>✓ Integrations</li>
+    <li>✓ 14 days support</li>
+  </ul>
+  <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;" class="plan-button">Contact</a>
+</div>
+
+<div class="pricing-card astro-animate">
+  <div class="pricing-header">
+    <h3>Minecraft Server Setup</h3>
+    <div class="price">$75</div>
+    <p>One-time</p>
+  </div>
+  <ul class="pricing-features">
+    <li>✓ Full setup</li>
+    <li>✓ Plugins configured</li>
+    <li>✓ Optimization</li>
+    <li>✓ Anti-exploit hardening</li>
+    <li>✓ Docs included</li>
+    <li>✓ 7 days support</li>
+  </ul>
+  <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;" class="plan-button">Contact</a>
+</div>
+
+<div class="pricing-card featured astro-animate">
+  <div class="badge">Most Popular</div>
+  <div class="pricing-header">
+    <h3>Full Network Setup</h3>
+    <div class="price">$300</div>
+    <p>One-time</p>
+  </div>
+  <ul class="pricing-features">
+    <li>✓ Multi-server setup</li>
+    <li>✓ Bungee/Velocity</li>
+    <li>✓ Custom plugins</li>
+    <li>✓ Databases</li>
+    <li>✓ Advanced security</li>
+    <li>✓ Full documentation</li>
+    <li>✓ 30 days support</li>
+  </ul>
+  <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;" class="plan-button">Contact</a>
+</div>
+
+</div>
+
+<!-- Hosting Setup Section -->
+<div class="hosting-plan-section astro-animate">
+  <h2 class="section-title">Hosting Company Full Setup</h2>
+  <div class="hosting-plan-card">
+    <div class="hosting-icon">🏢</div>
+    <h3>Complete Hosting Business Setup</h3>
+    <p class="hosting-description">Full WHMCS + Pterodactyl setup with branding & automation.</p>
+
+    <div class="hosting-features">
+      <h4>Includes:</h4>
+      <ul>
+        <li>✓ Pterodactyl Setup</li>
+        <li>✓ WHMCS Integration</li>
+        <li>✓ Branding + Themes</li>
+        <li>✓ SSL & Email Setup</li>
+        <li>✓ Automation</li>
+        <li>✓ Database setup</li>
+        <li>✓ Ticket support system</li>
+        <li>✓ 30 days support</li>
+      </ul>
+    </div>
+
+    <div class="hosting-requirements">
+      <h4>Requirements:</h4>
+      <ul>
+        <li>📌 WHMCS License</li>
+        <li>📌 Domain</li>
+        <li>📌 Server access</li>
+      </ul>
+    </div>
+
+    <div class="hosting-pricing">
+      <p class="hosting-price-label">Price</p>
+      <p class="hosting-price-contact">Custom Quote</p>
+    </div>
+
+    <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;" class="contact-button">Get Quote</a>
+  </div>
+</div>
+
+<!-- Add-ons -->
+<div class="addons-section astro-animate">
+  <h2 class="section-title">Add-Ons & Extra Services</h2>
+  <p class="addons-subtext">Enhance your plan with optional upgrades</p>
+
+  <div class="addons-grid">
+    <div class="addon-card">
+      <h3>Extra Discord Commands</h3>
+      <p class="addon-price">$3 each</p>
+      <p>Custom-made bot commands.</p>
+    </div>
+
+    <div class="addon-card">
+      <h3>Branding Pack</h3>
+      <p class="addon-price">$15</p>
+      <p>Logo + banner + identity pack.</p>
+    </div>
+
+    <div class="addon-card">
+      <h3>Anti-DDOS Setup</h3>
+      <p class="addon-price">$10</p>
+      <p>Firewall + protection rules.</p>
+    </div>
+
+    <div class="addon-card">
+      <h3>Extra Minecraft Server</h3>
+      <p class="addon-price">$25</p>
+      <p>Add another game server.</p>
+    </div>
+
+    <div class="addon-card">
+      <h3>Website Add-On</h3>
+      <p class="addon-price">$30</p>
+      <p>Landing page or status page.</p>
+    </div>
+
+    <div class="addon-card">
+      <h3>Extended Support</h3>
+      <p class="addon-price">$5</p>
+      <p>Extra 5 days support.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Comparison Table -->
+<table class="comparison-table astro-animate">
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Single Setup</th>
+      <th>Network Setup</th>
+      <th>Management</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td data-label="Feature">Performance Optimization</td>
+      <td data-label="Single Setup">✓</td>
+      <td data-label="Network Setup">✓✓</td>
+      <td data-label="Management">Monthly</td>
+    </tr>
+    <tr>
+      <td data-label="Feature">Security Hardening</td>
+      <td data-label="Single Setup">✓</td>
+      <td data-label="Network Setup">✓✓</td>
+      <td data-label="Management">✓</td>
+    </tr>
+    <tr>
+      <td data-label="Feature">Plugin Management</td>
+      <td data-label="Single Setup">One-time</td>
+      <td data-label="Network Setup">One-time</td>
+      <td data-label="Management">✓ Monthly</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Custom Plan -->
+<div class="custom-plan astro-animate">
+  <h2>Need Something Custom?</h2>
+  <p>Every project is unique. Contact me for a personalized quote.</p>
+  <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;" class="cta-button">Request Quote</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+  <div class="container" style="text-align:center;">
+    <h3>Get In Touch</h3>
+    <p>Email: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;">ceo@astroinc.xyz</a></p>
+    <p>Discord: <a href="https://discord.gg/3GxFJq8B5n" target="_blank">Join Community</a></p>
+
+    <p>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a> |
+      <a href="faq.html">FAQ</a> |
+      <a href="license.html">License</a>
+    </p>
+
+    <p>&copy; 2025 AstroDev. All rights reserved.</p>
+  </div>
+
+  <a class="copyrighted-badge"
+     title="Copyrighted.com Registered &amp; Protected"
+     target="_blank"
+     href="https://app.copyrighted.com/website/pXbuC8B3PhUJclYR/">
+    <img
+      alt="Copyrighted.com Registered &amp; Protected"
+      width="125"
+      height="75"
+      srcset="https://static.copyrighted.com/badges/125x75/03_2x.png 2x"
+      src="https://static.copyrighted.com/badges/125x75/03.png">
+  </a>
+  <script src="https://static.copyrighted.com/badges/helper.js"></script>
+</footer>
+
+<script src="script.js"></script>
+
+<!-- EXTRA INLINE JS (SAFE + ISOLATED) -->
+<script>
+// Fade-in on scroll
+const observer = new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('visible');
+    }
+  });
+});
+document.querySelectorAll('.astro-animate').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>

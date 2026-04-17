@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NYN06Z1XJC"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-NYN06Z1XJC');
+</script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - AstroDev</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-section {
+      padding: 5rem 0;
+      background: rgba(0, 18, 41, 0.9);
+      border-radius: 20px;
+      box-shadow: 0 0 40px rgba(51,153,255,0.3);
+      max-width: 1100px;
+      margin: auto;
+    }
+    .contact-content {
+      display: flex;
+      gap: 3rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .contact-form-wrapper {
+      flex: 1 1 550px;
+      background: rgba(13, 30, 53, 0.9);
+      padding: 2rem;
+      border-radius: 15px;
+      border: 2px solid #3399ff;
+      box-shadow: 0 0 30px rgba(51,153,255,0.2);
+      color: #e9f2ff;
+    }
+    .contact-form-wrapper h2 {
+      color: #80bfff;
+      margin-bottom: 1.5rem;
+      font-weight: 900;
+    }
+    .contact-form .form-group {
+      margin-bottom: 1.2rem;
+    }
+    .contact-form label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 700;
+      color: #acd7ff;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form input[type="tel"],
+    .contact-form select,
+    .contact-form textarea {
+      width: 100%;
+      background: #00172d;
+      color: #c1d4ff;
+      border: 1.5px solid rgba(51,153,255,0.4);
+      padding: 0.65rem 0.85rem;
+      font-size: 1rem;
+      border-radius: 10px;
+      transition: border-color 0.3s ease;
+      resize: vertical;
+    }
+    .contact-form input[type="text"]:focus,
+    .contact-form input[type="email"]:focus,
+    .contact-form input[type="tel"]:focus,
+    .contact-form select:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #3399ff;
+      background: #002b5c;
+      color: #e1f0ff;
+    }
+    .submit-btn {
+      display: inline-block;
+      background: #3399ff;
+      color: white;
+      font-weight: 700;
+      padding: 0.9rem 2.2rem;
+      border: none;
+      border-radius: 40px;
+      cursor: pointer;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      margin-top: 0.8rem;
+    }
+    .submit-btn:hover {
+      background: #1a5edd;
+      box-shadow: 0 0 20px rgba(51,153,255,0.7);
+    }
+    .form-note {
+      margin-top: 0.7rem;
+      font-style: italic;
+      color: #a3bee9;
+    }
+    #formMessage {
+      margin-top: 1rem;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+    .contact-info {
+      flex: 0 0 360px;
+      background: rgba(13, 30, 53, 0.9);
+      border-radius: 15px;
+      border: 2px solid #3399ff;
+      padding: 2rem 1.8rem;
+      box-shadow: 0 0 30px rgba(51,153,255,0.2);
+      color: #e9f2ff;
+    }
+    .contact-info h2 {
+      color: #80bfff;
+      font-weight: 900;
+      margin-bottom: 1.7rem;
+      text-align: center;
+    }
+    .info-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+      border-bottom: 1px solid rgba(51,153,255,0.2);
+      padding-bottom: 1rem;
+    }
+    .info-card:last-child {
+      border-bottom: none;
+    }
+    .info-icon {
+      font-size: 2.8rem;
+      color: #3399ff;
+      flex-shrink: 0;
+    }
+    .info-card h3 {
+      margin-bottom: 0.3rem;
+      color: #80bfff;
+      font-weight: 700;
+    }
+    .info-card p, .info-card small {
+      font-size: 0.92rem;
+      color: #c1d4ff;
+    }
+    .info-card a {
+      color: #67b7f7;
+      text-decoration: none;
+    }
+    .info-card a:hover {
+      text-decoration: underline;
+    }
+    @media(max-width: 880px) {
+      .contact-content {
+        flex-direction: column;
+        padding: 0 1rem;
+      }
+      .contact-form-wrapper, .contact-info {
+        width: 100%;
+        flex-shrink: 0;
+      }
+    }
+  </style>
+  <!-- Brevo Conversations {literal} -->
+<script>
+    (function(d, w, c) {
+        w.BrevoConversationsID = '6902f99d4341e6fed40c7492';
+        w[c] = w[c] || function() {
+            (w[c].q = w[c].q || []).push(arguments);
+        };
+        var s = d.createElement('script');
+        s.async = true;
+        s.src = 'https://conversations-widget.brevo.com/brevo-conversations.js';
+        if (d.head) d.head.appendChild(s);
+    })(document, window, 'BrevoConversations');
+</script>
+<!-- /Brevo Conversations {/literal} -->
+</head>
+<body class="loading">
+  <div class="cursor"></div>
+  <canvas id="stars"></canvas>
+  
+  <div id="loading-screen">
+    <div class="loader-container">
+      <div class="loader">
+        <div class="orbit"><div class="planet"></div></div>
+        <div class="orbit orbit-2"><div class="planet planet-2"></div></div>
+        <div class="orbit orbit-3"><div class="planet planet-3"></div></div>
+      </div>
+      <h2 class="loading-text">AstroDev</h2>
+      <div class="loading-bar"><div class="loading-progress"></div></div>
+      <p class="loading-subtitle">Loading your digital universe...</p>
+    </div>
+  </div>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-section">
+        <div class="logo-icon">🚀</div>
+        <a href="index.html" class="logo">AstroDev</a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">Home</a></li>
+        <li><a href="about.html" class="nav-link">About</a></li>
+        <li><a href="experience.html" class="nav-link">Experience</a></li>
+        <li><a href="projects.html" class="nav-link">Projects</a></li>
+        <li><a href="plans.html" class="nav-link">Plans</a></li>
+        <li><a href="testimonials.html" class="nav-link">Testimonials</a></li>
+        <li><a href="faq.html" class="nav-link">FAQ</a></li>
+        <li><a href="contact.html" class="nav-link active">Contact</a></li>
+      </ul>
+      <a href="contact.html" class="get-started-btn">Get Started</a>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <h1 class="fade-in">Get In Touch</h1>
+      <p class="fade-in delay-1">Have a project in mind? Let's discuss and make it happen!</p>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-content">
+
+        <div class="contact-form-wrapper">
+          <h2>Send us a Message</h2>
+          <form id="xkgqdwgr" class="contact-form" action="https://formspree.io/f/xkgqdwgr" method="POST" novalidate>
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input type="text" id="name" name="name" required placeholder="Your Name" />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" required placeholder="your@email.com" />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Type *</label>
+              <select id="service" name="service" required>
+                <option value="">-- Select a Service --</option>
+                <option value="Discord Bot">Discord Bot Development</option>
+                <option value="Minecraft Server">Minecraft Server Setup</option>
+                <option value="Hosting Setup">Hosting Company Setup</option>
+                <option value="Maintenance">Server Maintenance</option>
+                <option value="Custom Project">Custom Project</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="budget">Budget Range</label>
+              <select id="budget" name="budget">
+                <option value="">-- Select Budget --</option>
+                <option value="Under $100">Under $100</option>
+                <option value="$100 - $300">$100 - $300</option>
+                <option value="$300 - $500">$300 - $500</option>
+                <option value="$500+">$500+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="timeline">Timeline</label>
+              <select id="timeline" name="timeline">
+                <option value="">-- Select Timeline --</option>
+                <option value="ASAP">ASAP (1-2 weeks)</option>
+                <option value="Flexible">Flexible (2-4 weeks)</option>
+                <option value="Not Urgent">Not Urgent (4+ weeks)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" required placeholder="Tell us about your project..." rows="5"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+            <p class="form-note">We'll respond within 24 hours</p>
+          </form>
+          <div id="formMessage" class="form-message" style="display:none;"></div>
+        </div>
+
+        <div class="contact-info">
+  <h2>Other Ways to Reach Us</h2>
+  <div class="info-card">
+    <div class="info-icon">✉️</div>
+    <h3>Email</h3>
+    <p><a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;">ceo@astroinc.xyz</a></p>
+    <small>Response time: 48 hours</small>
+  </div>
+
+  <div class="info-card">
+    <div class="info-icon">💬</div>
+    <h3>Discord</h3>
+    <p><a href="https://discord.gg/3GxFJq8B5n" target="_blank">Join Community</a></p>
+    <small>Live support in Discord</small>
+  </div>
+
+  <div class="info-card">
+    <div class="info-icon">⏱️</div>
+    <h3>Available</h3>
+    <p>Monday, Thursday, Saturday, Sunday</p>
+    <small>4 PM -  11 PM (UTC+1)</small>
+  </div>
+
+  <div class="info-card">
+    <div class="info-icon">💰</div>
+    <h3>Payment Terms</h3>
+    <p>50% Upfront, 50% on Completion</p>
+    <small>Bank transfers only via iPay</small>
+  </div>
+
+  <!-- Knowledge Base Button Card -->
+  <div class="info-card">
+    <div class="info-icon">📚</div>
+    <h3>Knowledge Base</h3>
+    <a href="https://astro-dev.xyz/knowlagebase" class="kb-button" target="_blank" rel="noopener noreferrer">
+      Visit Knowledge Base
+    </a>
+    <small>Find guides, FAQs, and help articles</small>
+  </div>
+</div>
+</div>
+<!-- Button CSS (add to your stylesheet or in a <style> tag) -->
+<style>
+  .kb-button {
+    display: inline-block;
+    background-color: #007acc;
+    color: white;
+    padding: 10px 22px;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-top: 8px;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgb(0 122 204 / 0.15);
+    transition: background-color 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+  }
+  .kb-button:hover {
+    background-color: #005fa3;
+    box-shadow: 0 6px 12px rgb(0 122 204 / 0.23);
+  }
+</style>
+</section>
+<footer>
+  <div class="container" style="text-align:center;">
+    <h3>Get In Touch</h3>
+    <p>Email: <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x6f;&#x77;&#x6e;&#x65;&#x72;&#x40;&#x61;&#x73;&#x74;&#x72;&#x6f;&#x2d;&#x64;&#x65;&#x76;&#x2e;&#x78;&#x79;&#x7a;">ceo@astroinc.xyz</a></p>
+    <p>Discord: <a href="https://discord.gg/3GxFJq8B5n" target="_blank">Join Community</a></p>
+
+    <p>
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="terms.html">Terms of Service</a> |
+      <a href="faq.html">FAQ</a> |
+      <a href="license.html">License</a>
+    </p>
+
+    <p>&copy; 2025 AstroDev. All rights reserved.</p>
+  </div>
+
+  <a class="copyrighted-badge" 
+     title="Copyrighted.com Registered &amp; Protected" 
+     target="_blank" 
+     href="https://app.copyrighted.com/website/pXbuC8B3PhUJclYR/">
+    <img 
+      alt="Copyrighted.com Registered &amp; Protected" 
+      border="0" 
+      width="125" 
+      height="75" 
+      srcset="https://static.copyrighted.com/badges/125x75/03_2x.png 2x" 
+      src="https://static.copyrighted.com/badges/125x75/03.png">
+  </a>
+  <script src="https://static.copyrighted.com/badges/helper.js"></script>
+</footer>
+
+
+  <script src="script.js"></script>
+
+</html>

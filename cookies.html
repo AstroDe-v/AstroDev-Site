@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AstroDev Cookie Consent Test</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+      min-height: 100vh;
+      padding: 40px 20px;
+      color: #fff;
+    }
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      background: linear-gradient(45deg, #2da8ff, #6dc6ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 1.1rem;
+      color: #c4c4c4;
+      margin-bottom: 40px;
+    }
+    .demo-content {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 40px;
+      border: 1px solid rgba(255,255,255,0.1);
+      margin-bottom: 30px;
+    }
+    .demo-content h2 {
+      color: #2da8ff;
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+    .demo-content p {
+      line-height: 1.6;
+      color: #e2e2e2;
+      margin-bottom: 20px;
+    }
+    .status {
+      background: rgba(45, 168, 255, 0.2);
+      border: 1px solid #2da8ff;
+      border-radius: 10px;
+      padding: 15px;
+      margin-top: 20px;
+      font-family: monospace;
+      text-align: left;
+      font-size: 14px;
+    }
+    .clear-storage {
+      background: #2da8ff;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      margin-top: 20px;
+    }
+    .clear-storage:hover {
+      background: #6dc6ff;
+      transform: translateY(-2px);
+    }
+    @media (max-width: 768px) {
+      body { padding: 20px 15px; }
+      h1 { font-size: 2rem; }
+      .demo-content { padding: 25px 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 AstroDev</h1>
+    <p class="subtitle">Cookie Consent Test Page</p>
+    
+    <div class="demo-content">
+      <h2>Cookie Consent Demo</h2>
+      <p>
+        This page tests the full cookie consent banner with customize modal. Clear storage below to 
+        see the banner again. Check browser dev tools → Application → Local Storage to see saved preferences.
+      </p>
+      <div id="consentStatus" class="status" style="display: none;">
+        <strong>Current consent status:</strong><br>
+        <span id="statusContent"></span>
+      </div>
+      <button class="clear-storage" onclick="clearConsent()">
+        🔄 Clear Cookie Consent (Show Banner Again)
+      </button>
+    </div>
+
+    <div class="demo-content">
+      <h2>Usage Instructions</h2>
+      <p>
+        <strong>1. Production:</strong> Copy the entire &lt;script&gt; section below to your main layout<br>
+        <strong>2. Paths:</strong> Adjust <code>href="/cookies.html"</code> to match your policy page<br>
+        <strong>3. Check consent:</strong> Use <code>getCookieConsent()</code> function anywhere in your site
+      </p>
+    </div>
+  </div>
+
+  <!-- COOKIE CONSENT SCRIPT (paste this in your production pages) -->
+  <script src="cookie-consent.js"></script>
+  
+  <!-- HELPER FUNCTIONS FOR TESTING -->
+  <script>
+    function getCookieConsent() {
+      try {
+        return JSON.parse(localStorage.getItem('astrodev_cookie_consent') || '{}');
+      } catch {
+        return {};
+      }
+    }
+
+    function clearConsent() {
+      localStorage.removeItem('astrodev_cookie_consent');
+      location.reload();
+    }
+
+    // Show current status
+    window.addEventListener('load', () => {
+      const consent = getCookieConsent();
+      const statusEl = document.getElementById('consentStatus');
+      const statusContent = document.getElementById('statusContent');
+      
+      if (Object.keys(consent).length > 0) {
+        statusContent.innerHTML = `
+          Decision: ${consent.decision || 'unknown'}<br>
+          Essential: ${consent.essential}<br>
+          Analytics: ${consent.analytics}<br>
+          Marketing: ${consent.marketing}<br>
+          Saved: ${new Date(consent.timestamp).toLocaleString()}
+        `;
+        statusEl.style.display = 'block';
+      }
+    });
+  </script>
+</body>
+</html>

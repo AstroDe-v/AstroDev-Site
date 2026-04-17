@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Site Map | Astro Dev</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: radial-gradient(circle at top, #0f172a, #020617);
+      color: #e5e7eb;
+      min-height: 100vh;
+      padding: 40px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      background: rgba(15, 23, 42, 0.9);
+      border-radius: 18px;
+      box-shadow: 0 0 40px rgba(56,189,248,0.2);
+      padding: 40px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+      background: linear-gradient(90deg, #38bdf8, #22d3ee, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    p {
+      text-align: center;
+      color: #9ca3af;
+      margin-bottom: 40px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #020617, #0f172a);
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+      transition: 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent, rgba(56,189,248,0.15), transparent);
+      transform: translateX(-100%);
+      transition: 0.6s;
+    }
+
+    .card:hover::before {
+      transform: translateX(100%);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 35px rgba(56,189,248,0.3);
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: #38bdf8;
+    }
+
+    .card a {
+      display: block;
+      margin-top: 8px;
+      color: #a5f3fc;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: 0.2s;
+    }
+
+    .card a:hover {
+      color: #67e8f9;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Astro Dev – Site Map</h1>
+    <p>Quick access to every major section of our website</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <h2>Main Pages</h2>
+        <a href="https://astro-dev.xyz/">Home</a>
+        <a href="https://astro-dev.xyz/about">About Us</a>
+        <a href="https://astro-dev.xyz/services">Services</a>
+        <a href="https://astro-dev.xyz/contact">Contact</a>
+      </div>
+
+      <div class="card">
+        <h2>Legal</h2>
+        <a href="https://astro-dev.xyz/privacy-policy">Privacy Policy</a>
+        <a href="https://astro-dev.xyz/terms">Terms of Service</a>
+      </div>
+
+      <div class="card">
+        <h2>Community</h2>
+        <a href="#">Discord</a>
+        <a href="#">Minecraft Server</a>
+      </div>
+
+      <div class="card">
+        <h2>Resources</h2>
+        <a href="https://astro-dev.xyz/sitemap.xml">XML Sitemap</a>
+      </div>
+
+    </div>
+
+    <footer>
+      © 2025 Astro Dev — All rights reserved.
+      <a class="copyrighted-badge" title="Copyrighted.com Registered &amp; Protected" target="_blank" href="https://app.copyrighted.com/website/pXbuC8B3PhUJclYR/"><img alt="Copyrighted.com Registered &amp; Protected" border="0" width="125" height="25" srcset="https://static.copyrighted.com/badges/125x25/03_2_2x.png 2x" src="https://static.copyrighted.com/badges/125x25/03_2.png"></a><script src="https://static.copyrighted.com/badges/helper.js"></script>
+    </footer>
+  </div>
+
+</body>
+</html>

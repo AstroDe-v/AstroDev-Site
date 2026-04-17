@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cpanel/
+Disallow: /config/
+Disallow: /includes/
+
+Sitemap: https://astro-dev.xyz/sitemap.xml
+
